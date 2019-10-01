@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
-void main(){
-	runApp(
-		Center(
-			child: Text(
-				'Heyooo, Emanuel on the mixin',
-				textDirection: TextDirection.rtl,
-			),
-		)
-	)
+class MyAppBar extends StatelessWidget{
+	MyAppBar({this.title});
+	
+	final Widget title;
+	
+	
+	@override
+	Widget build(BuildContext context) {
+	
+	}
 }
