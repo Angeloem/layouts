@@ -3,22 +3,34 @@ import 'package:flutter/material.dart';
 void main(){
 	runApp(MaterialApp(
 		title: 'Floating Action Button',
-		home: TutorialHome,
+		home: TutorialHome(),
 	));
 }
 
-class TutorialHome extends StatelessWidget {
+class TutorialHome extends StatefulWidget {
+	@override
+	_TutorialHome createState() => _TutorialHome();
+}
+
+class _TutorialHome extends  State<TutorialHome>{
+	int _counter = 0;
+	
+	void _increment() {
+		setState(() {
+		  _counter++;
+		});
+	}
+	
 	@override
 	Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-		appBar: AppBar(
-			leading: IconButton(
-				icon: Icon(Icons.menu),
-				tooltip: 'Menu',
-				onPressed: null,
-			),
-		),
-	);
-  }
+		return Row(
+			children: <Widget>[
+				RaisedButton(
+					onPressed: _increment,
+					child: Text('Increment'),
+				),
+				Text('Count: $_counter'),
+			],
+		);
+	}
 }
