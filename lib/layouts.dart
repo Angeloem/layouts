@@ -15,7 +15,19 @@ class MyApp extends StatelessWidget{
     return new MaterialApp(
 		title: "Intro",
 		home: new Scaffold(
-		
+			appBar: new AppBar(
+				title: Text(
+					"Intro",
+					textAlign: TextAlign.center,
+				),
+			),
+			body: new Center(
+				child: new RaisedButton(
+					onPressed: () => print("clicked"),
+					color: Colors.blue,
+					child: new Text("press me"),
+				),
+			),
 		),
 	);
   }

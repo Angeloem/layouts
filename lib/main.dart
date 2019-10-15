@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:layouts/layouts.dart';
 
 void main(){
 	runApp(MaterialApp(
-		title: 'Floating Action Button', 
-		home: TutorialHome(),
+		title: 'Floating Action Button',
+		home: MyApp(),
 	));
 }
 
