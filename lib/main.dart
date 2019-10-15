@@ -28,8 +28,13 @@ class _TutorialHome extends  State<TutorialHome>{
 				RaisedButton(
 					onPressed: _increment,
 					child: Text('Increment'),
+					color: Colors.yellow,
 				),
-				Text('Count: $_counter'),
+				Text('Count: $_counter', style: TextStyle(
+					fontSize: 46,
+					fontStyle: FontStyle.normal,
+					fontWeight: FontWeight.bold
+				),),
 			],
 		);
 	}
