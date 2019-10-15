@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 class ema extends StatelessWidget{
   @override
@@ -10,7 +11,11 @@ class ema extends StatelessWidget{
 			children: <Widget>[
 				new Text('first'),
 				new Text('second'),
-				new Text('third'),
+				new Text(
+					'third',
+					textDirection: TextDirection.ltr,
+					textWidthBasis: TextWidthBasis.longestLine,
+				),
 			],
 		),
 	);

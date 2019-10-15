@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'myWidget.dart';
 
 void main() {
 	runApp(
@@ -22,11 +23,16 @@ class MyApp extends StatelessWidget{
 				),
 			),
 			body: new Center(
-				child: new RaisedButton(
-					onPressed: () => print("clicked"),
-					color: Colors.blue,
-					child: new Text("press me"),
-				),
+				child:new Column(
+					children: <Widget>[
+						new RaisedButton(
+							onPressed: () => print("clicked"),
+							color: Colors.blue,
+							child: new Text("press me"),
+						),
+						new ema(),
+					],
+				)
 			),
 		),
 	);
