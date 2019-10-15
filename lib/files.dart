@@ -2,16 +2,19 @@ import 'dart:convert';
 import 'dart:io';
 
 
-void list(String path) {
+String list(String path) {
 	try {
 		Directory root = new Directory(path);
+		String newPath = "";
 		if(root.existsSync()) // exists sync includes a future version of Future
 			// thing. Batteries included
 			{
 				for(FileSystemEntity f in root.listSync()) {
-					print(f.path);
+					newPath += f.path;
 				}
 		}
+		return newPath;
+		
 	}
 	
 	catch (e) {
@@ -44,13 +47,25 @@ String readFile(String file){
 	}
 }
 
+List<String> readLines(String file){
+	try {
+		File f = new File(file);
+		return f.readAsLinesSync();
+	}
+	
+	catch (e) {
+		print(e.toString());
+	}
+}
+
 main(List<String> arguments) {
 	String path = '/';
-	list(path);
 	
 	String txt = "/home/angeloem/Videos/test.txt";
 	
-	if (writeFile(txt, "hello world", FileMode.append)) {
+	if (writeFile(txt, list(path)+ "\n", FileMode.append)) {
 		print(readFile(txt));
+		List<String> list = readLines(txt);
+		print(list.length);
 	}
 }
