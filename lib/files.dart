@@ -34,7 +34,23 @@ bool writeFile(String file, String data, FileMode mode) {
 	}
 }
 
+String readFile(String file){
+	try {
+		File f = new File(file);
+		return f.readAsStringSync();
+	}
+	catch (e){
+		print(e.toString());
+	}
+}
+
 main(List<String> arguments) {
 	String path = '/';
 	list(path);
+	
+	String txt = "/home/angeloem/Videos/test.txt";
+	
+	if (writeFile(txt, "hello world", FileMode.append)) {
+		print(readFile(txt));
+	}
 }
